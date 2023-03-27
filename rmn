@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for dir in "$@"; do
+  upper=$(dirname "$dir")
+  find "$dir" -maxdepth 1 -exec mv -n {} "$upper" \;
+  rmdir "$dir"
+done
